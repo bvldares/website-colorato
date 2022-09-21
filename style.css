@@ -1,0 +1,383 @@
+:root{
+    --clr-white:#fff;
+    --clr-dark: #233040;
+    --clr-light-blue: #205269;
+    --clr-light-green: #34675B;
+    --clr-lighter-green: #90D4C5;
+
+    --fs-primary:2.5rem;
+    --fs-links: 1.125rem;
+    --fs-secondary:2rem;
+    --fs-body:1rem;
+    --fs-small:.875rem;
+
+    --ff-p: 'Barlow', sans-serif;
+    --ff-headers: 'Fraunces', serif; 
+
+    --fw-barlow: 600;
+    --fw-700: 700;
+    --fw-900:900;
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media(min-width:800px){
+  :root{
+    --fs-primary:3.5rem;
+    --fs-links: 2.125rem;
+    --fs-secondary:3rem;
+    --fs-body:2rem;
+    --fs-small:1.6rem;
+}
+}
+
+
+/*Tipografia*/
+
+body{
+    font-family: var(--ff-p);
+    text-align: center;
+}
+
+.intro-title,
+.square-title,
+.square-link,
+.testimonial-title,
+.client-id,
+.service-sub{
+    font-family: var(--ff-headers);
+}
+
+.intro-title{
+    font-size: var(--fs-primary);
+    letter-spacing: 3px;
+    color: var(--clr-white);
+}
+
+.square-title,
+.grapic-design-sub{
+    font-size: var(--fs-secondary);
+}
+
+
+.square-link{
+    text-transform: uppercase;
+    color: var(--clr-dark);
+    text-decoration: none;
+    position:relative;
+    cursor: pointer;
+}
+
+.square-link::before{
+    position: absolute;
+    content: "";
+    height:.5em;
+    width: 100%;
+    top: .8em;
+    z-index: -1;
+    background-color:#e9dd97;
+}
+
+
+header{
+    background-color:#3EBFFF;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2em 1.5em;
+}
+
+nav{
+    display: none;
+    background-color: var(--clr-white);
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    height: fit-content;
+    width: 90%;
+}
+
+
+.nav-list{
+    list-style: none;
+    padding:1em 0;
+}
+
+.nav-links{
+    margin-bottom: 1.2em;
+}
+
+.nav-links:last-child{
+    margin-top: 1.5em;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: grey;
+}
+
+.contact{
+    font-size:var(--fs-small);
+    font-family: var(--ff-headers);
+    color: var(--clr-dark);
+    text-transform: uppercase;
+    border-radius: 20px;
+    padding:1em 1.5em;
+    background-color: #FDD100;
+}
+
+/*INTRO SECTION STYLE*/
+
+.intro{
+  background-image: url("images/mobile/image-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.intro-title{
+  margin: 1em 0 ;
+  line-height: 1.2;
+}
+
+.main-container{
+  padding:1.5em;
+}
+
+.square-section{
+  text-align: center;
+}
+
+.square-title{
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.square-link{
+  display: inline-block;
+  margin: 1.5em 0;
+}
+
+/*Services*/
+.service-graphic,
+.service-photo{
+  position: relative;
+}
+
+.service-img{
+  z-index: -1;
+}
+
+.service-description{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  width: 100%;
+  padding: 0 1.5em;
+}
+
+
+.service-sub{
+  font-weight: var(--fw-900);
+  font-size: var(--fs-secondary);
+  
+}
+
+.service-body{
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.service-graphic .service-sub,
+.service-graphic .service-body{
+  color: var(--clr-light-green);
+}
+
+.service-photo .service-sub,
+.service-photo .service-body{
+  color: var(--clr-light-blue);
+}
+
+
+/*Testimonial*/
+
+.testimonial{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-title{
+  margin: 2em 0;
+  color: grey;
+  letter-spacing: 4px;
+  font-size: var(--fs-small);
+}
+
+.clients-container{
+  padding: 1.5em;
+}
+
+.client{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.client img{
+  border-radius: 50%;
+  width: 64px;
+}
+
+.client-id{
+  margin-top: 1.5em;
+}
+
+.client-job{
+  font-size: var(--fs-small);
+  color: grey;
+}
+
+
+/*Gallery*/
+
+.images-container{
+  display: grid;
+  grid-template-columns: repeat(2,50%);
+
+  grid-template-areas: 
+  "milk orange-milk"
+  "cone sugar";
+}
+
+.milk-img{grid-area: milk;}
+.orange-img{grid-area: orange-milk;}
+.cone-img{grid-area: cone;}
+.cubes-img{grid-area: sugar;}
+
+/*Footer*/
+
+footer{
+  background-color: var(--clr-lighter-green);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer img{
+  width: 150px;
+  padding: 2em 0;
+}
+
+.footer-list{
+  width: 90%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.socials{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  padding: 2em;
+}
+
+.socials img{
+  width: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
