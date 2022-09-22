@@ -95,22 +95,12 @@ select {
   }
 }
 
-@media(min-width:800px){
-  :root{
-    --fs-primary:3.5rem;
-    --fs-links: 2.125rem;
-    --fs-secondary:3rem;
-    --fs-body:2rem;
-    --fs-small:1.6rem;
-}
-}
-
-
 /*Tipografia*/
 
 body{
     font-family: var(--ff-p);
     text-align: center;
+    font-size: var(--fs-body);
 }
 
 .intro-title,
@@ -119,14 +109,11 @@ body{
 .testimonial-title,
 .client-id,
 .service-sub{
-    font-family: var(--ff-headers);
+    font-family: var(--ff-headers);  
 }
 
-.intro-title{
-    font-size: var(--fs-primary);
-    letter-spacing: 3px;
-    color: var(--clr-white);
-}
+
+
 
 .square-title,
 .grapic-design-sub{
@@ -172,6 +159,7 @@ nav{
     right: 5%;
     height: fit-content;
     width: 90%;
+    z-index: 300;
 }
 
 
@@ -206,20 +194,38 @@ nav{
 /*INTRO SECTION STYLE*/
 
 .intro{
-  background-image: url("images/mobile/image-header.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center bottom;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 60vh;
+  position: relative;
+  background-color: #3EBFFF;
+}
+
+
+.intro-orange-bg{
+  object-fit:cover;
+}
+
+.intro-arrow{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
 }
 
 .intro-title{
   margin: 1em 0 ;
   line-height: 1.2;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  font-size: var(--fs-primary);
+  letter-spacing: 3px;
+  color: var(--clr-white);
 }
+
+
 
 .main-container{
   padding:1.5em;
@@ -371,9 +377,55 @@ footer img{
   width: 18px;
 }
 
+@media(min-width:650px){
+    .intro-orange-bg{
+      content: url("images/desktop/image-header.jpg");
+    }
+
+    .square-section{
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
 
+    main{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+      "text-one egg"
+      "glass text-two"
+    }
 
+    .text-one{grid-area: text-one;}
+    .egg-{grid-area: egg;}
+    .text-two{grid-area: text-two;}
+    .glass{grid-area: glass;}
+    .service-graphic{grid-area: graphic;}
+    .service-photo{grid-area:photo;}
+    
+    .egg-img,
+    .glass-img{
+      object-fit: cover;
+      flex-shrink: 0;
+      min-width: 100%;
+      min-height: 100%
+    }
+    
+    .square-section{
+      display: flex;
+    }
+
+    .text-one,
+    .text-two{
+      padding: 3em;
+    }
+
+    .main-container{
+      margin: auto;
+      text-align: left;
+      padding: 0em;
+    }
+}
 
 
 
