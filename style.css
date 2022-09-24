@@ -402,11 +402,16 @@ footer img{
 
 @media(min-width:765px){
 
+    .hamburger{
+      display: none;
+    }
+
     .container{
-    
+      padding: 0 2em;
     }
 
     nav{
+      display: block;
       background-color: #3EBFFF;
       position: static;
       max-width: 500px;
@@ -435,7 +440,6 @@ footer img{
       display:block;
       margin-bottom: 1.5em;
     }
-
 
     .intro-orange-bg{
       content: url("images/desktop/image-header.jpg");

@@ -1,4 +1,6 @@
 const nav = document.querySelector("nav")
+var screen = window.matchMedia("(min-width:765px)")
+var hamburgerScreen = window.matchMedia("(max-width:764px)")
 
 
 document.getElementById("menu-toggle").addEventListener("click", function(){
@@ -9,18 +11,3 @@ document.getElementById("menu-toggle").addEventListener("click", function(){
     }
 })
 
-
-
-var screen = window.matchMedia("(min-width:765px)")
-
-function navSwitch(screen) {
-    if(screen){
-        nav.style.display = "block"
-        
-        document.querySelector(".hamburger").style.display ="none"
-    }
-}
-
-
-navSwitch(screen)
-screen.addListener(navSwitch)
