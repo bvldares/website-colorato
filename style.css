@@ -191,6 +191,11 @@ nav{
     background-color: #FDD100;
 }
 
+
+.hamburger{
+  z-index: 1000;
+}
+
 /*INTRO SECTION STYLE*/
 
 .intro{
@@ -199,7 +204,6 @@ nav{
   align-items: center;
   position: relative;
   background-color: #3EBFFF;
-  
 }
 
 .intro .main-container{
@@ -397,6 +401,42 @@ footer img{
 
 
 @media(min-width:765px){
+
+    .container{
+    
+    }
+
+    nav{
+      background-color: #3EBFFF;
+      position: static;
+      max-width: 500px;
+    }
+
+    .nav-list{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links{
+      margin: 0;
+    }
+    
+    .nav-link{
+      color: #fff;
+    }
+
+    .contact{
+      color: inherit;
+      align-self: center;
+      display:block;
+      margin-bottom: 1.5em;
+    }
+
+
     .intro-orange-bg{
       content: url("images/desktop/image-header.jpg");
       max-height: 500px;
